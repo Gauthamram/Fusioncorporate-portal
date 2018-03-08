@@ -25,4 +25,4 @@ Deployment as new instance:
 
 ##Dashboard
 
-![ScreenShot]https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/dashboard.png
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/dashboard.png)
