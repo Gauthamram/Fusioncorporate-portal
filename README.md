@@ -23,6 +23,22 @@ Deployment as new instance:
 - Go to settings page and set the values. If you have problem figuring out the values, send this ~WC to the printer and this will tell the printer to print a Configuration Label which will give you all the details required.
 - Make sure the settings are same in the printer as well
 
-##Dashboard
+## Dashboard
 
 ![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/dashboard.png)
+
+## Order List
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/Orderlist.png)
+
+
+## Printer Setting -1
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/settings.png)
+
+## Printer Setting -2
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/settings-1.png)
+
+## Print Shop
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/print%20shop.png)
+
+## Suppliers
+![ScreenShot](https://github.com/Gauthamram/Fusioncorporate-portal/blob/master/suppliers.png)
