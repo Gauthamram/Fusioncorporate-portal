@@ -4,7 +4,7 @@
             <div class="panel-heading">
                 Printed Label History
             </div>
-            <div class="panel-body">       
+            <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
@@ -18,13 +18,13 @@
                         <tbody>
                         @foreach ($tickets as $ticket)
                              <tr>
-                                <td><a href="/portal/label/order/{{$ticket->order_id}}">{{$ticket->order_id}}</a></td>
+                                <td><a href="{{ action('OrderController@orderdetails', ['id' => $$ticket->order_id]) }}">{{$ticket->order_id}}</a></td>
                                 <td>{{$ticket->created_at}}</td>
                                 <td>{{ucfirst(trans($ticket->type))}}</td>
                                 <td>{{$ticket->quantity}}</td>
                             </tr>
                         @endforeach
-                        </tbody>    
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -33,5 +33,5 @@
         <div class="alert alert-danger col-md-6">
                 No label history found.
         </div>
-    @endif              
+    @endif
 </div>

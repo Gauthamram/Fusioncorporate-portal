@@ -8,15 +8,15 @@
             Dashboard
         </h4>
     </div>
-    
+
     @include('errors.error-list')
 
-    <!--Pending Order List-->                
+    <!--Pending Order List-->
     <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-heading">
             Orders
-            </div> 
+            </div>
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
@@ -28,9 +28,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($orders as $order) 
+                        @foreach ($orders as $order)
                             <tr>
-                                <td><a href="/portal/label/order/{{$order['order_number']}}">{{$order['order_number']}}</a></td>
+                                <td><a href="{{ action('OrderController@orderdetails', ['id' => $order['order_number']]) }}">
+                                    {{$order['order_number']}}
+                                    </a>
+                                </td>
                                 <td>{{ucwords(strtolower($order['supplier']))}}</td>
                                 <td>{{$order['approval_date']}}</td>
                             </tr>
@@ -38,11 +41,11 @@
                         </tbody>
                     </table>
                     <div class="text-right">
-                        <a href="/portal/label/orders">View more <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{ action('OrderController@orderlist') }}">View more <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
-        </div>              
+        </div>
     </div>
     <!--End Order List-->
     <!--account settings-->
@@ -64,14 +67,14 @@
                     </span> -->
                 </div>
                 <div class="text-right">
-                    <a data-vbtype="ajax" class="venbobox" href="/portal/user/recovery/{{$user['id']}}">Account Settings <i class="fa fa-arrow-circle-right"></i></a>
+                    <a data-vbtype="ajax" class="venbobox" href="{{ action('UserController@recovery', ['id' => $user['id']]) }}">Account Settings <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
     <!--end account settings-->
-                
-    <!--label history-->                
+
+    <!--label history-->
     @include('partials._history')
     <!--End label history-->
 </div>

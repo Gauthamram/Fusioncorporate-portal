@@ -15,10 +15,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         @if (!empty($user))
-                        <li><a data-vbtype="ajax" class="venbobox"  href="/portal/user/recovery/{{$user['id']}}"><i class="fa fa-cog fa-fw"></i>User Setting</a></li>
-                        <li><a href="/portal/user/logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+                        <li><a data-vbtype="ajax" class="venbobox"  href="{{ action('UserController@recovery', ['id' => $user['id']]) }}"><i class="fa fa-cog fa-fw"></i>User Setting</a></li>
+                        <li><a href="{{ action('UserController@logout') }}"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
                         @else
-                        <li><a href="/portal/login"><i class="fa fa-sign-out fa-fw"></i>Login</a></li>
+                        <li><a href="{{ action('AuthenticateController@login') }}"><i class="fa fa-sign-out fa-fw"></i>Login</a></li>
                         @endif
                     </ul>
                     <!-- /.dropdown-user -->

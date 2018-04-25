@@ -5,7 +5,7 @@
     <!-- Carton -->
     <div class="col-xs-12">
     @if(!empty($orderdetails['cartonpack']))
-        <h4>Carton Pack - {{$order_no}}</h4>     
+        <h4>Carton Pack - {{$order_no}}</h4>
             <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="label_options">
                 <thead>
@@ -36,7 +36,7 @@
                         <td class="col-xs-1"><input class="form-control {{$order['item']}}" name="data[{{$order['item']}}][over_print_qty]" type="number" value="0" required></td>
                         <td class="col-xs-1"><input type="checkbox" id="btn_select_check" class="pack" data-item="{{$order['item']}}" checked></td>
                     </tr>
-                @endforeach 
+                @endforeach
                 </tbody>
             </table>
             </div>
@@ -44,12 +44,12 @@
     <h4>Carton Pack</h4>
         <div class="alert alert-danger col-md-6">
             No carton labels to print for this order.
-        </div>    
-    @endif 
+        </div>
+    @endif
     </div>
     <div class="col-xs-12">
         @if(!empty($orderdetails['cartonloose']))
-            <h4>Carton Loose - {{$order_no}}</h4>     
+            <h4>Carton Loose - {{$order_no}}</h4>
                 <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover" id="label_options">
                     <thead>
@@ -88,11 +88,11 @@
             <h4>Carton Loose</h4>
             <div class="alert alert-danger col-md-6">
                 No carton labels to print for this order.
-            </div>    
+            </div>
         @endif
 </div>
     @if (!empty($orderdetails['cartonpack']) || !empty($orderdetails['cartonloose']))
         <button type="submit" class="btn btn-primary btn-sm pull-right">Save &amp; Generate</button>
-    @endif         
-    </form>   
+    @endif
+    </form>
 </div>

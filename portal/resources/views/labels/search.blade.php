@@ -6,9 +6,9 @@
         <h4 class="page-header">
             Search
         </h4>
-        @include('partials._flash') 
+        @include('partials._flash')
     </div>
-    
+
     <!-- search panel -->
     <div class="col-md-12 col-sm-12 col-xs-12">
     	<div class="panel panel-default">
@@ -19,7 +19,7 @@
     	                <label>Order ID</label>
     	                <input name="order_no" class="form-control" type="number" value="{{ (empty($input['order_no'])) ? '' : $input['order_no']}}" required="true">
     				</div>
-    				<div class="form-group">	
+    				<div class="form-group">
     					<label>Item Number</label>
     	                <input name="item_number" class="form-control" type="number" value="{{ (empty($input['item_number'])) ? '' : $input['item_number'] }}">
     	            </div>
@@ -37,7 +37,7 @@
     	            <button type="submit" class="btn btn-primary btn-sm">Submit</button>
     			</form>
     		</div>
-		</div>	
+		</div>
         <!-- list -->
         @if ( $errors->count() > 0 )
             <div class="alert alert-danger col-md-6">
@@ -45,12 +45,12 @@
                   <strong>{{ $message }}</strong>
                 @endforeach
             </div>
-        @endif 	
+        @endif
         <!-- end search panel -->
     </div>
-        
-    
-    <div class="col-md-12 col-sm-12 col-xs-12"> 
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
             @if (isset($orders))
                 @if(count($orders) > 0)
                 <div class="panel panel-default">
@@ -76,9 +76,14 @@
                                         <td>{{$order['style']}}</td>
                                         <td>{{$order['item']}}</td>
                                         <td>{{$order['quantity']}}</td>
-                                        <td><a class="btn btn-primary btn-sm" href="/portal/label/print/{{strtolower($order['carton_type'])}}/{{$order['order_number']}}/{{$order['item']}}">Generate</a></td>
+                                        <td><a class="btn btn-primary btn-sm"
+                                            href=" {{ action('LabelController@printcartontype', [
+                                            'cartontype' => strtolower($order['carton_type']),
+                                            'order_no' => $order['order_number'],
+                                            'item' => $order['item']
+                                            ]) }}">Generate</a></td>
                                     </tr>
-                                @endforeach    
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -89,7 +94,7 @@
                         No orders found.
                     </div>
                 @endif
-            @endif              
+            @endif
     </div>
 
 </div>
