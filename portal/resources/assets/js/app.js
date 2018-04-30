@@ -1,8 +1,28 @@
 
 /**
- * First, we will load all of this project's Javascript utilities and other
- * dependencies. Then, we will be ready to develop a robust and powerful
- * application frontend using useful Laravel and JavaScript libraries.
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
  */
 
 require('./bootstrap');
+
+window.Vue = require('vue');
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+Vue.prototype.$http = window.axios;
+
+import PortalVue from 'portal-vue'
+
+Vue.use(PortalVue)
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('user-menu', require('./components/userMenu.vue'));
+
+const app = new Vue({
+    el: '#wrapper'
+});
