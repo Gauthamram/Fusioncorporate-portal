@@ -49,29 +49,7 @@
     </div>
     <!--End Order List-->
     <!--account settings-->
-    <div class="col-md-4 col-sm-12 col-xs-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Account Settings
-            </div>
-            <div class="panel-body">
-                <div class="list-group">
-                    <span class="list-group-item">
-                     Name: {{ucfirst(trans($user['name']))}}
-                    </span>
-                    <span class="list-group-item">
-                     Email: {{$user['email']}}
-                    </span>
-                    <!-- <span class="list-group-item">
-                     Contact
-                    </span> -->
-                </div>
-                <div class="text-right">
-                    <a data-vbtype="ajax" class="venbobox" href="{{ action('UserController@recovery', ['id' => $user['id']]) }}">Account Settings <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <account-setting user="{{ json_encode($user)}}"></account-setting>
     <!--end account settings-->
 
     <!--label history-->

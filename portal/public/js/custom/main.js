@@ -60,52 +60,20 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
-/***/ (function(module, exports) {
+/***/ 12:
+/***/ (function(module, exports, __webpack_require__) {
 
-/*------------------------------------------------------
-    Author : www.webthemez.com
-    License: Commons Attribution 3.0
-    http://creativecommons.org/licenses/by/3.0/
----------------------------------------------------------  */
+module.exports = __webpack_require__(13);
 
-(function ($) {
-    "use strict";
-
-    var mainApp = {
-
-        initFunction: function initFunction() {
-            /*MENU 
-            ------------------------------------*/
-            $('#main-menu').metisMenu();
-
-            $(window).bind("load resize", function () {
-                if ($(this).width() < 768) {
-                    $('div.sidebar-collapse').addClass('collapse');
-                } else {
-                    $('div.sidebar-collapse').removeClass('collapse');
-                }
-            });
-        },
-
-        initialization: function initialization() {
-            mainApp.initFunction();
-        }
-        // Initializing ///
-
-    };$(document).ready(function () {
-        mainApp.initFunction();
-    });
-})(jQuery);
 
 /***/ }),
 
-/***/ 11:
+/***/ 13:
 /***/ (function(module, exports) {
 
 $(function () {
@@ -294,15 +262,6 @@ function detectIE() {
     // other browser
     return false;
 }
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(10);
-module.exports = __webpack_require__(11);
-
 
 /***/ })
 

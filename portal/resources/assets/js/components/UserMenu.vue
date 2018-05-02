@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import recoverymodal from './Recovery-Modal.vue';
+import recoverymodal from './RecoveryModal.vue';
 export default {
     props: {
         user: { required: true }
