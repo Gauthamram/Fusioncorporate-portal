@@ -6,6 +6,8 @@
 </head>
 <body>
     <div id="wrapper">
+        <div id="app">
+        </div>
         @include('includes.topnav')
         @include('includes.sidenav')
         <div id="page-wrapper">
