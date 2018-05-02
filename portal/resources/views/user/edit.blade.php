@@ -7,7 +7,7 @@
         <h4 class="page-header">
             New User
         </h4>
-    </div>    
+    </div>
     @if (!empty($message))
          <div class="alert col-md-4 col-md-offset-4 alert-{{$status}}">
              {{$message}}
@@ -19,11 +19,11 @@
                 @foreach( $errors->all() as $message )
                   <li>{{ $message }}</li>
                 @endforeach
-              </ul> 
+              </ul>
         </div>
     @endif
     <!--account settings-->
-    <div class="col-md-6 col-sm-12 col-xs-12">        
+    <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="list-group">
@@ -32,14 +32,7 @@
                     <input name="token" type="hidden" id="token" value="{{$token}}" />
                     <input class="form-control supplier" id="supplier_box" name="role_id" type="hidden" value="0">
                     @if(strtolower($user['roles']) == 'administrator')
-                        <div class="form-group">
-                            <label>Role *</label>
-                            <select class="form-control" name="role" id="role">
-                            @foreach($roles as $role)
-                                 <option value={{strtolower($role)}}>{{$role}}</option> 
-                            @endforeach
-                            </select>
-                        </div>
+                        <dropdown options="{{json_encode($roles)}}" label="Role *" name="role"></dropdown>
                     @endif
                         <div class="form-group">
                             <label>Name *</label>
@@ -54,19 +47,19 @@
                             <input class="form-control" name="password" type="password" required>
                         </div>
                         <div id="extra-fields">
-                            <div class="form-group" id="supplier">
+                            <!-- <div class="form-group" id="supplier">
                                 <label>Supplier *</label>
                                 <input class="form-control supplier" id="supplier_autocomplete" name="role_id" type="text">
                             </div>
                             <div class="form-group" id="warehouse">
                                 <label>Warehouse *</label>
                                 <input class="form-control warehouse" id="warehouse" name="role_id" type="text">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                             <label>Creator</label>
                             <input class="form-control " id="creator" name="creator" type="text" value="{{$user['id']}}" >
                         </div>
-                        </div>    
+                        </div>
                         <button type="submit" class="btn btn-primary">Create User</button>
                     </form>
                 </div>
@@ -75,4 +68,4 @@
     </div>
     <!--end account settings-->
 </div>
-@stop    
+@stop

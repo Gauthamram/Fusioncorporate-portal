@@ -14,7 +14,8 @@ import './bootstrap';
  */
 
 Vue.component('user-menu', require('./components/userMenu.vue'));
-Vue.component('account-setting', require('./components/AccountSetting.vue'));
+Vue.component('accountsetting', require('./components/AccountSetting.vue'));
+Vue.component('dropdown', require('./components/DropDown.vue'));
 
 const app = new Vue({
     el: '#wrapper'
