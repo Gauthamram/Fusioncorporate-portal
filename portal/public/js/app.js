@@ -12112,7 +12112,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 Vue.component('user-menu', __webpack_require__(44));
-Vue.component('account-setting', __webpack_require__(49));
+Vue.component('accountsetting', __webpack_require__(49));
+Vue.component('dropdown', __webpack_require__(52));
 
 var app = new Vue({
   el: '#wrapper'
@@ -14374,7 +14375,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.isVisible = !this.isVisible;
         }
     },
-    mounted: function mounted() {
+    created: function created() {
         this.userObject = JSON.parse(this.user);
     }
 });
@@ -14898,6 +14899,181 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-00641bda", module.exports)
+  }
+}
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(53)
+/* template */
+var __vue_template__ = __webpack_require__(54)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/DropDown.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5b73b0e8", Component.options)
+  } else {
+    hotAPI.reload("data-v-5b73b0e8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		options: { required: true },
+		label: { required: true },
+		name: { required: true }
+	},
+	data: function data() {
+		return {
+			optionsObject: {},
+			selected: {}
+		};
+	},
+	created: function created() {
+		this.optionsObject = JSON.parse(this.options);
+	}
+});
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", [_vm._v(_vm._s(_vm.label))]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selected,
+                expression: "selected"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { name: _vm.name },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.selected = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          _vm._l(_vm.optionsObject, function(option) {
+            return _c("option", { domProps: { value: option } }, [
+              _vm._v(_vm._s(option))
+            ])
+          })
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.optionsObject, function(option) {
+        return _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.selected == option,
+                expression: "selected == option"
+              }
+            ],
+            staticClass: "form-group",
+            attrs: { id: option }
+          },
+          [
+            _c("label", [_vm._v(_vm._s(option) + " *")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { name: "role_id", type: "text" }
+            })
+          ]
+        )
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5b73b0e8", module.exports)
   }
 }
 

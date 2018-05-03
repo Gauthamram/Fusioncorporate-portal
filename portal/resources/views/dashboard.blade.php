@@ -49,7 +49,7 @@
     </div>
     <!--End Order List-->
     <!--account settings-->
-    <account-setting user="{{ json_encode($user)}}"></account-setting>
+    <accountsetting user="{{ json_encode($user)}}"></accountsetting>
     <!--end account settings-->
 
     <!--label history-->

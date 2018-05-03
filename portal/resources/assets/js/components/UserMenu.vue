@@ -42,7 +42,7 @@ export default {
             this.isVisible = !this.isVisible;
         }
     },
-    mounted() {
+    created() {
             this.userObject = JSON.parse(this.user);
         }
 }
