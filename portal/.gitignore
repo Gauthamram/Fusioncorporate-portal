@@ -7,6 +7,7 @@
 /public/framework/views/*
 /storage/*.key
 /storage/*
+/mysql
 /vendor
 /.idea
 /.vagrant
