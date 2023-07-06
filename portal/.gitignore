@@ -6,6 +6,7 @@
 /public/framework/sessions/*
 /public/framework/views/*
 /storage/*.key
+/storage/*
 /vendor
 /.idea
 /.vagrant

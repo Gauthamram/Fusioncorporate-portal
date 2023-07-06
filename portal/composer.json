@@ -1,5 +1,5 @@
 {
-    "name": "Fusion/WebPortal",
+    "name": "fusion/portal",
     "description": "The Fusion WebPortal application for suppliers to print labels.",
     "keywords": ["Fusion", "webportal"],
     "license": "MIT",
@@ -52,6 +52,9 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     }
 }
