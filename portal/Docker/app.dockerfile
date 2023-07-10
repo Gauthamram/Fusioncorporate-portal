@@ -7,3 +7,6 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN apk update && apk add curl && \
   curl -sS https://getcomposer.org/installer | php \
   && chmod +x composer.phar && mv composer.phar /usr/local/bin/composer
+
+RUN apk add --update nodejs npm
+RUN npm install -g npm
